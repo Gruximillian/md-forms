@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  margin: 20px auto;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+#color-picker h3 {
+  margin: 0;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  color: #6c6c6c;
+  background-color: #fff;
+}
+
+form::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  width: 100%;
+}
+
+.colors {
+  float: left;
+  width: 45%;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  background-color: transparent;
+}
+
+.alpha {
+  margin-top: 20px;
+}
+
+.alpha, textarea {
+  float: right;
+  width: 45%;
+}
+
+textarea {
+  height: 110px;
+}
+
+.color-codes {
+  clear: both;
+}
+
+.red {
+  color: #f00;
+}
+
+.green {
+  color: #0f0;
+}
+
+.blue {
+  color: #00f;
+}

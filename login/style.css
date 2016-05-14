@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+#login-form h3 {
+  margin: 0;
+}
+
+.close-button {
+  float: right;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  color: #6c6c6c;
+  background-color: #fff;
+}
+
+form:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  width: 100%;
+}
+
+.credentials input {
+  width: 100%;
+  height: 45px;
+  margin: 15px 0;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 0 15px;
+}
+
+.credentials input:focus {
+  border-color: #aaa;
+  outline: none;
+}
+
+.credentials div {
+  position: relative;
+}
+
+.credentials label {
+  display: none;
+  position: absolute;
+  font-size: 0.7em;
+  background-color: #fff;
+}
+
+/* This style will be applied when user starts to type in the field */
+.credentials input:focus + label {
+  display: block;
+  top: 10px;
+  right: 10px;
+}
+
+#remember {
+  margin-top: 15px;
+}
+
+#remember + label {
+  margin-left: 5px;
+}
+
+#submit {
+  width: 40%;
+  height: 40px;
+  margin-bottom: 0;
+  float: right;
+  font-size: 1.2em;
+  background-color: #3c8ed2;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: #3abcff;
+}
+
+.pass-reset {
+  margin: 25px 0 0 0;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #00f;
+}

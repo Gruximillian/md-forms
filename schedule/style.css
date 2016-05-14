@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 350px;
+  margin: 20px auto;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+form#schedule {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  color: #6c6c6c;
+  background-color: #fff;
+}
+
+form#schedule::after,
+form#schedule div::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#schedule #date,
+#schedule #time,
+#schedule select {
+  float: right;
+  width: 150px;
+}
+
+form#schedule div {
+  margin: 10px 0;
+  line-height: 35px;
+  clear: right;
+}
+
+#schedule input {
+  height: 35px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+#schedule input:focus{
+  border: 1px solid #999;
+  outline: none;
+}
+
+#schedule textarea:focus {
+  outline: 1px solid #ccc;
+}
+
+#schedule select {
+  height: 35px;
+  width: 80px;
+}
+
+#schedule #message {
+  display: block;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+}
+
+#schedule #phone,
+#schedule #email {
+  display: block;
+  width: 70%;
+}
+
+#schedule #submit {
+  width: 100%;
+  height: 40px;
+  display: block;
+  margin: 20px auto 0;
+  font-size: 1.2em;
+  background-color: #3c8ed2;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#schedule #submit:hover {
+  cursor: pointer;
+  background-color: #3abcff;
+}

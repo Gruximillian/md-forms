@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 450px;
+  margin: 20px auto;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+#credit-card-info div {
+  position: relative;
+}
+
+form#credit-card-info  {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  color: #6c6c6c;
+  background-color: #fff;
+}
+
+form#credit-card-info:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#credit-card-info fieldset {
+  border: 1px solid #ccc;
+}
+
+#credit-card-info input {
+  height: 35px;
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.5em;
+  padding: 0;
+  text-align: center;
+}
+
+#credit-card-info input:focus{
+  border: 1px solid #999;
+  outline: none;
+}
+
+#credit-card-info label {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#credit-card-info #csv-code {
+  width: 100px;
+  margin: 10px auto;
+}
+
+#card-numbers div {
+  z-index: 20;
+}
+
+#what-is-csv {
+  position: absolute;
+  font-size: 1.5em;
+  bottom: 5px;
+  right: 100px;
+}
+
+#what-is-csv:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+#what-is-csv:hover ~ .tooltip {
+  opacity: 1;
+  z-index: 50;
+}
+
+.tooltip {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  position: absolute;
+  bottom: 40px;
+  padding: 5px;
+  right: 0;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  z-index: -10;
+  transition: all 0.4s;
+}
+
+.tooltip::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  background-color: inherit;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  left: 45%;
+  transform: rotateZ(45deg);
+}
+
+#card-expiration label {
+  margin-left: 20px;
+}
+
+#credit-card-info select {
+  height: 30px;
+}
+
+#credit-card-info #submit {
+  width: 40%;
+  height: 40px;
+  margin: 20px auto 0;
+  font-size: 1.2em;
+  background-color: #3c8ed2;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+}
+
+#credit-card-info #submit:hover {
+  cursor: pointer;
+  background-color: #3abcff;
+}

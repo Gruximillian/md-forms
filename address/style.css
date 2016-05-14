@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+  padding: 5px 10px;
+}
+
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  font-family: arial, sans-serif;
+  color: #6c6c6c;
+  background-color: #fff;
+}
+
+form::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+fieldset {
+  width: 48%;
+  margin: 0 0 20px 0;
+}
+
+fieldset div {
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 35px;
+  padding-left: 10px;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #999;
+  outline: none;
+}
+
+select {
+  width: 100%;
+  height: 35px;
+}
+
+#shipping-address {
+  float: left;
+}
+
+#billing-address {
+  float: right;
+}
+
+.match-addresses {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+#submit {
+  width: 40%;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2em;
+  background-color: #3c8ed2;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: #3abcff;
+}

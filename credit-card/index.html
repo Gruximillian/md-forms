@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credit Card form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header class="home-link">
+    <p><a href="../../index.html">Home of Web Components Projects</a></p>
+  </header>
+  <div class="wrapper">
+    <form name="credit-card-info" id="credit-card-info">
+
+      <fieldset id="cardholders-name">
+        <legend>Cardholders name</legend>
+        <label for="full-name">Cardholders full name (as written on the card)</label>
+        <input id="full-name" type="text" placeholder="full name">
+      </fieldset>
+
+      <fieldset id="card-numbers">
+        <legend>Card number and security code</legend>
+
+        <div>
+          <label for="card-number">16-digit card number, with hyphens</label>
+          <input id="card-number" name="card-number" type="text" placeholder="card number" maxlength="19">
+
+          <label for="csv-code">3-digit csv code, located on the back of the card</label>
+          <input id="csv-code" name="csv-code" type="text" placeholder="csv code" maxlength="3">
+          <span id="what-is-csv">?</span>
+          <span class="tooltip">CSV code is the security code located on the back of your card. Using this code will improve security.</span>
+        </div>
+      </fieldset>
+
+      <fieldset id="card-expiration">
+        <legend>Card expiration</legend>
+
+        <label>Month</label>
+        <select>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+
+        <label>Year</label>
+        <select>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+
+      </fieldset>
+
+      <input id="submit" type="submit" value="Submit">
+
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Schedule form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header class="home-link">
+    <p><a href="../../index.html">Home of Web Components Projects</a></p>
+  </header>
+  <div class="wrapper">
+    <form id="schedule" name="schedule">
+      <div>
+        <label for="date">Select date</label>
+        <input id="date" name="date" type="date" placeholder="mm/dd/yyyy">
+      </div>
+      <div>
+        <label for="time">Select time</label>
+        <input id="time" name="time" type="time" placeholder="hh:mm AM/PM">
+      </div>
+      <div>
+        <label for="timezone">Select timezone</label>
+        <select id="timezone" name="timezone">
+          <option class="timezone" value="UTC-11">UTC-11</option>
+          <option class="timezone" value="UTC-10">UTC-10</option>
+          <option class="timezone" value="UTC-9">UTC-9</option>
+          <option class="timezone" value="UTC-8">UTC-8</option>
+          <option class="timezone" value="UTC-7">UTC-7</option>
+          <option class="timezone" value="UTC-6">UTC-6</option>
+          <option class="timezone" value="UTC-5">UTC-5</option>
+          <option class="timezone" value="UTC-4">UTC-4</option>
+          <option class="timezone" value="UTC-3">UTC-3</option>
+          <option class="timezone" value="UTC-2">UTC-2</option>
+          <option class="timezone" value="UTC-1">UTC-1</option>
+          <option class="timezone" value="UTC" selected>UTC</option>
+          <option class="timezone" value="UTC+1">UTC+1</option>
+          <option class="timezone" value="UTC+2">UTC+2</option>
+          <option class="timezone" value="UTC+3">UTC+3</option>
+          <option class="timezone" value="UTC+4">UTC+4</option>
+          <option class="timezone" value="UTC+5">UTC+5</option>
+          <option class="timezone" value="UTC+6">UTC+6</option>
+          <option class="timezone" value="UTC+7">UTC+7</option>
+          <option class="timezone" value="UTC+8">UTC+8</option>
+          <option class="timezone" value="UTC+9">UTC+9</option>
+          <option class="timezone" value="UTC+10">UTC+10</option>
+          <option class="timezone" value="UTC+11">UTC+11</option>
+          <option class="timezone" value="UTC+12">UTC+12</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Enter message</label>
+        <textarea id="message"></textarea>
+      </div>
+      <div>
+        <label for="phone">Enter your phone</label>
+        <input id="phone" name="phone" type="text" placeholder="Phone">
+      </div>
+      <div>
+        <label for="email">Enter your email</label>
+        <input id="email" name="email" type="email" placeholder="Email">
+      </div>
+      <input id="submit" type="submit" value="Schedule">
+    </form>
+  </div>
+</body>
+</html>

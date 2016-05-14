@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Search form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header class="home-link">
+    <p><a href="../../index.html">Home of Web Components Projects</a></p>
+  </header>
+  <div class="wrapper">
+    <form name="search">
+      <select id="category">
+        <optgroup label="Select a category">
+          <option class="category" value="Kinematics">Kinematics</option>
+          <option class="category" value="Dynamics">Dynamics</option>
+          <option class="category" value="Aerodynamics">Aerodynamics</option>
+          <option class="category" value="Fluids">Fluids</option>
+          <option class="category" value="Electricity">Electricity</option>
+          <option class="category" value="Magnetism">Magnetism</option>
+          <option class="category" value="Energy and work">Energy and work</option>
+          <option class="category" value="Thermodynamics">Thermodynamics</option>
+          <option class="category" value="" default selected>Select Category</option>
+        </optgroup>
+      </select>
+      <input id="search-term" type="text" placeholder="Enter search term here...">
+      <input id="submit" type="submit" value="Search">
+    </form>
+  </div>
+</body>
+</html>

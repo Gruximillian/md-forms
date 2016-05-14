@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up Web Component</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../lib/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#theme-control li').on('click', function() {
+        var select = $(this).attr('id'), // Select previous or next image
+            currentImage = $('body').css('background-image').split('[$')[1].split(']')[0], // Current image number
+            newImageUrl = '', // Url for the new image
+            numberOfImages = 4; // Change this to match number of images in the folder,
+                                // image names must be in the form: "signup-background-numberOfImages.jpg"
+        console.log(currentImage);
+        if (select === 'prev') {
+          // Going down if previous is clicked
+          currentImage--;
+          // Reached zero, start from the last image
+          if (currentImage === 0) currentImage = numberOfImages;
+        } else {
+          // Going up if next is clicked
+          currentImage++;
+          // Reached last image, start over from the first
+          if (currentImage === numberOfImages + 1) currentImage = 1;
+        }
+        // Form the url for the new image
+        newImageUrl = 'url("signup-background-[$' + currentImage + '].jpg")';
+        //console.log(newImageUrl);
+        // Assign new url to the body element
+        $('body').css('background-image', newImageUrl);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="home-link">
+    <p><a href="../../index.html">Home of Web Components Projects</a></p>
+  </header>
+  <div class="wrapper">
+    <form id="signup" name="signup-form">
+
+      <fieldset>
+        <div id="theme-control">
+          <ul>
+            <li id="prev">&lt;</li>
+            <li id="next">&gt;</li>
+            <span class="tooltip prev">Previous background</span>
+            <span class="tooltip next">Next background</span>
+          </ul>
+        </div>
+        <legend>Who are you?</legend>
+        <label for="first-name">First name</label>
+        <input name="first-name" id="first-name" type="text" placeholder="Enter your first name here" required="required"><span class="required"> *</span><br>
+        <label for="las-name">Last name</label>
+        <input name="last-name" id="last-name" type="text" placeholder="Enter your last name here" required="required"><span class="required"> *</span><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>How do we contact you?</legend>
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email" placeholder="Enter your email address here" required="required"><span class="required"> *</span><br>
+      </fieldset>
+
+      <fieldset class="date-of-birth">
+        <legend>Would you like to tell us when you were born?</legend>
+        <label for="month">Month</label>
+        <input name="month" id="month" placeholder="mm" maxlength="2" pattern="[1-9]|0[1-9]|1[0-2]">
+        <label for="day">Day</label>
+        <input name="day" id="day" placeholder="dd" maxlength="2" pattern="[1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1]">
+        <label for="year">Year</label>
+        <input name="year" id="year" placeholder="yyyy" maxlength="4" pattern="19[0-9][0-9]|20[0-9][0-9]">
+      </fieldset>
+
+      <fieldset>
+        <legend>Enchantment to protect your account</legend>
+        <label for="password">Enter password</label>
+        <input name="password" id="password" type="password" placeholder="Type password here" required="required"><span class="required"> *</span><br>
+        <label for="password-check">Repeat password</label>
+        <input name="password-check" id="password-check" type="password" placeholder="Retype password here" required="required"><span class="required"> *</span><br>
+      </fieldset>
+
+      <input id="submit" type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
