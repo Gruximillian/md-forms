@@ -17,21 +17,6 @@ h3 {
   border: 1px solid #000;
 }
 
-.home-link {
-  text-align: center;
-}
-
-.home-link a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: maroon;
-  padding: 5px 10px;
-}
-
-.home-link a:hover {
-  text-decoration: underline;
-}
-
 form {
   width: 100%;
   padding: 20px 30px;

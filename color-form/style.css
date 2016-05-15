@@ -12,21 +12,6 @@ body {
   margin: 20px auto;
 }
 
-.home-link {
-  text-align: center;
-}
-
-.home-link a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: maroon;
-  padding: 5px 10px;
-}
-
-.home-link a:hover {
-  text-decoration: underline;
-}
-
 #color-picker h3 {
   margin: 0;
   text-align: center;
