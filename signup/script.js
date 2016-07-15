@@ -4,7 +4,7 @@
 //  It also utilizes the 'validator.js' library created in the 'Introduction to the DOM' chapter
 //
 
-window.onload = function() {
+window.addEventListener('load', function() {
   //console.log(validator.isEmpty('sedfd'));
   var form = document.getElementById('signup'),
       firstNameField = form.querySelector('#first-name'),
@@ -152,4 +152,5 @@ window.onload = function() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
   });
-}
+
+});
