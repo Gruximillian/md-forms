@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Sign Up Web Component</title>
+  <title>Sign Up Form</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../lib/validator.js"></script>
   <script type="text/javascript" src="../lib/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
   <script type="text/javascript">
     $(function() {
       $('#theme-control li').on('click', function() {
@@ -63,19 +65,19 @@
       <fieldset class="date-of-birth">
         <legend>Would you like to tell us when you were born?</legend>
         <label for="month">Month</label>
-        <input name="month" id="month" placeholder="mm" maxlength="2" pattern="[1-9]|0[1-9]|1[0-2]">
+        <input name="month" id="month" placeholder="mm" maxlength="2">
         <label for="day">Day</label>
-        <input name="day" id="day" placeholder="dd" maxlength="2" pattern="[1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1]">
+        <input name="day" id="day" placeholder="dd" maxlength="2">
         <label for="year">Year</label>
-        <input name="year" id="year" placeholder="yyyy" maxlength="4" pattern="19[0-9][0-9]|20[0-9][0-9]">
+        <input name="year" id="year" placeholder="yyyy" maxlength="4">
       </fieldset>
 
       <fieldset>
         <legend>Enchantment to protect your account</legend>
         <label for="password">Enter password</label>
         <input name="password" id="password" type="password" placeholder="Type password here" required="required"><span class="required"> *</span><br>
-        <label for="password-check">Repeat password</label>
-        <input name="password-check" id="password-check" type="password" placeholder="Retype password here" required="required"><span class="required"> *</span><br>
+        <label for="password-repeat">Repeat password</label>
+        <input name="password-repeat" id="password-repeat" type="password" placeholder="Retype password here" required="required"><span class="required"> *</span><br>
       </fieldset>
 
       <input id="submit" type="submit" value="Submit">
