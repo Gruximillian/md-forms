@@ -181,7 +181,7 @@ window.addEventListener('load', function() {
   year.addEventListener('keyup', function() {
     checkYear(this);
   });
-/*
+
   password.addEventListener('keyup', function() {
     checkPassword(this);
   });
@@ -199,7 +199,7 @@ window.addEventListener('load', function() {
     var pass = this.value;
     comparePasswords(pass, password);
   });
-*/
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     checkBirthDate(dateObj, 21, firstNameField);
