@@ -15,6 +15,7 @@ window.addEventListener('load', function() {
       month = form.querySelector('#month'),
       day = form.querySelector('#day'),
       year = form.querySelector('#year'),
+      dateObj = {month: month, day: day, year: year},
       charSetsLatin = {
         interpunction: [' ', '-'],
         alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
@@ -55,10 +56,14 @@ window.addEventListener('load', function() {
     var value = element.value,
         pattern = /^[1-9]$|0[1-9]|1[0-2]/;
     // pattern matches numbers from 1 to 9, numbers 10 to 12, and zero padded numbers 1 to 9
-    if ( pattern.test(value) ) {
+
+    // this field is not required
+    if ( pattern.test(value) || value === '' ) {
       element.setCustomValidity('');
+      return true;
     } else {
       element.setCustomValidity('Month values must be between 1 and 12, and can be zero padded.');
+      return false;
     }
   }
 
@@ -70,10 +75,13 @@ window.addEventListener('load', function() {
     var value = element.value,
         pattern = /^[1-9]$|0[1-9]|1[0-9]|2[0-9]|3[0-1]/;
 
-    if ( pattern.test(value) ) {
+    // this field is not required
+    if ( pattern.test(value) || value === '' ) {
       element.setCustomValidity('');
+      return true;
     } else {
       element.setCustomValidity('Date values must be between 1 and 31, and can be zero padded.');
+      return false;
     }
   }
 
@@ -81,10 +89,13 @@ window.addEventListener('load', function() {
     var value = element.value,
         pattern = /19\d\d|20\d\d/;
 
-    if ( pattern.test(value) ) {
+    // this field is not required
+    if ( pattern.test(value) || value === '' ) {
       element.setCustomValidity('');
+      return true;
     } else {
       element.setCustomValidity('Year values must be between 1900 and 2099.');
+      return false;
     }
   }
 
@@ -104,6 +115,46 @@ window.addEventListener('load', function() {
       element.setCustomValidity('');
     } else {
       element.setCustomValidity('Passwords don\'t match!');
+    }
+  }
+
+  function checkBirthDate(date, minAge, name) {
+    var yearVal = date.year.value,
+        monthVal = date.month.value,
+        dayVal = date.day.value,
+        firstName = name.value,
+        birthDate;
+
+    function getAge(birthDay) {
+      var now = new Date(),
+          age = Math.floor(( now.getTime() - birthDay.getTime() ) / ( 365 * 24 * 3600000 ));
+
+      // this does not give precise results
+      // parhaps it is because leap years are not considered
+      // but it might be something else
+      return age;
+    }
+
+    if ( yearVal && monthVal && dayVal ) {
+
+      if ( checkYear(date.year) && checkMonth(date.month) && checkDay(date.day) ) {
+        birthDate = yearVal + '-' + monthVal + '-' + dayVal;
+        birthDate = new Date(birthDate);
+        if ( validator.isBeforeToday(birthDate) && getAge(birthDate) >= minAge ) {
+          console.log('Your age is: ', getAge(birthDate) );
+        } else {
+          date.month.setCustomValidity('You are not of the appropriate age to sign up here!');
+        }
+      }
+
+    } else if ( !yearVal && !monthVal && !dayVal ) {
+
+      console.log('Ok ' + firstName + ', no birthday present for you!');
+
+    } else if ( !yearVal || !monthVal || !dayVal ) {
+
+      date.month.setCustomValidity(firstName + ', you must enter all three fields for your birth date.');
+
     }
   }
 
@@ -130,7 +181,7 @@ window.addEventListener('load', function() {
   year.addEventListener('keyup', function() {
     checkYear(this);
   });
-
+/*
   password.addEventListener('keyup', function() {
     checkPassword(this);
   });
@@ -148,9 +199,10 @@ window.addEventListener('load', function() {
     var pass = this.value;
     comparePasswords(pass, password);
   });
-
+*/
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    checkBirthDate(dateObj, 21, firstNameField);
   });
 
 });
