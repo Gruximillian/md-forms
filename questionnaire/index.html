@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>A Questionnaire</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../lib/validator.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
   <div class="wrapper">
-    <form name="search">
+    <form id="questionnaire" name="search">
       <h3>What is your favorite way of transportation?</h3>
       <div>
         <input id="tr-car" type="radio" name="transport" value="Car"><label for="tr-car">Car</label>
@@ -39,7 +41,7 @@
 
       <input id="custom-answer" type="text" placeholder="Enter your own answer." disabled>
 
-      <input id="submit" type="submit" value="Submit">
+      <input id="submit" type="submit" value="Submit" disabled>
     </form>
   </div>
 </body>
