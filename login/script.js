@@ -7,7 +7,9 @@ window.addEventListener('load', function() {
 
   var form = document.getElementById('login-form'),
       username = form.querySelector('#username'),
-      password = form.querySelector('#password');
+      password = form.querySelector('#password'),
+      unameValid = false,
+      passValid = false;
 
 
   function checkUsername(element) {
@@ -15,10 +17,13 @@ window.addEventListener('load', function() {
 
     if ( validator.isEmpty(value) ) {
       element.setCustomValidity('You must provide your username to login.');
+      return false;
     } else if ( !validator.isOfLength(value, 2) ) {
       element.setCustomValidity('User names are longer than one character!');
+      return false;
     }  else {
       element.setCustomValidity('');
+      return true;
     }
   }
 
@@ -27,11 +32,14 @@ window.addEventListener('load', function() {
     var value = element.value;
 
     if ( validator.isEmpty(value) ) {
-      element.setCustomValidity('You must enter your password to login.')
+      element.setCustomValidity('You must enter your password to login.');
+      return false;
     } else if ( validator.isOfLength(value, 8) ) {
       element.setCustomValidity('');
+      return true;
     } else {
       element.setCustomValidity('Passwords are at least 8 characters long!');
+      return false;
     }
   }
 
@@ -42,15 +50,22 @@ window.addEventListener('load', function() {
 
 
   username.addEventListener('keyup', function() {
-    checkUsername(this);
+    unameValid = checkUsername(this);
+    console.log('User name valid: ', unameValid);
   });
 
   password.addEventListener('keyup', function() {
-    checkPassword(this);
+    passValid = checkPassword(this);
+    console.log('Password valid: ', passValid);
   });
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    if ( unameValid && passValid ) {
+      console.log('The entered data is valid and can be sent to the server for check.');
+    } else {
+      console.log('The data entered is not valid to be sent to the server.');
+    }
   });
 
 });
