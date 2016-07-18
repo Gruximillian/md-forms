@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>Search form</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../lib/validator.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
   <div class="wrapper">
-    <form name="search">
+    <form id="search" name="search">
       <select id="category">
         <optgroup label="Select a category">
           <option class="category" value="Kinematics">Kinematics</option>
@@ -18,7 +20,7 @@
           <option class="category" value="Magnetism">Magnetism</option>
           <option class="category" value="Energy and work">Energy and work</option>
           <option class="category" value="Thermodynamics">Thermodynamics</option>
-          <option class="category" value="" default selected>Select Category</option>
+          <option class="category" value="All" default selected>All Physics</option>
         </optgroup>
       </select>
       <input id="search-term" type="text" placeholder="Enter search term here...">

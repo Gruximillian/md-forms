@@ -13,15 +13,20 @@ body {
 
 form {
   border-radius: 5px;
-  position: relative;
-  min-width: 400px;
+  min-width: 520px;
   color: #fff;
 }
 
+form::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 #category {
-  position: absolute;
   height: 35px;
-  left: 0;
+  width: 22%;
+  float: left;
   padding-left: 10px;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
@@ -39,12 +44,13 @@ form {
 }
 
 #search-term {
-  padding-left: 150px;
-  padding-right: 120px;
+  padding-left: 15px;
   height: 35px;
-  border: 1px solid #000;
-  border-radius: inherit;
-  width: 100%;
+  border: none;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 60%;
+  float: left;
   background-color: rgba(0, 0, 0, 0.1);
   outline: none;
 }
@@ -56,10 +62,9 @@ form {
 
 #submit {
   height: 35px;
+  width: 18%;
+  float: left;
   padding: 0 15px;
-  right: 0;
-  top: 0;
-  position: absolute;
   font-size: 1.2em;
   letter-spacing: 2px;
   background-color: #5cb85c;
