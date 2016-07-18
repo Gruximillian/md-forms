@@ -1,11 +1,10 @@
-
 //
 //  THIS IS THE CODE THAT UTILIZES THE CONSTRAINT API FOR FORM VALIDATION
 //  It also utilizes the 'validator.js' library created in the 'Introduction to the DOM' chapter
 //
 
 window.addEventListener('load', function() {
-  //console.log(validator.isEmpty('sedfd'));
+
   var form = document.getElementById('signup'),
       firstNameField = form.querySelector('#first-name'),
       lastNameField = form.querySelector('#last-name'),
@@ -135,6 +134,8 @@ window.addEventListener('load', function() {
       return age;
     }
 
+    // if all date fields are filled, then check if they represent a date before current day
+    // and if the age of the user is of minimum age
     if ( yearVal && monthVal && dayVal ) {
 
       if ( checkYear(date.year) && checkMonth(date.month) && checkDay(date.day) ) {
@@ -147,16 +148,22 @@ window.addEventListener('load', function() {
         }
       }
 
+    // if all date fields are empty, then do nothing since they are not rerquired
     } else if ( !yearVal && !monthVal && !dayVal ) {
 
       console.log('Ok ' + firstName + ', no birthday present for you!');
 
+    // if some date fields are emty and some are not, then inform the user that they must be all filled
     } else if ( !yearVal || !monthVal || !dayVal ) {
 
       date.month.setCustomValidity(firstName + ', you must enter all three fields for your birth date.');
 
     }
   }
+
+  /*************************/
+  /*    EVENT LISTENERS    */
+  /*************************/
 
   firstNameField.addEventListener('keyup', function() {
     checkName(this);
