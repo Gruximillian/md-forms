@@ -124,14 +124,11 @@ window.addEventListener('load', function() {
         firstName = name.value,
         birthDate;
 
-    function getAge(birthDay) {
+    function validAge(birthDay, minAge) {
       var now = new Date(),
-          age = Math.floor(( now.getTime() - birthDay.getTime() ) / ( 365 * 24 * 3600000 ));
+          referenceDate = now.setFullYear(now.getFullYear() - minAge);
 
-      // this does not give precise results
-      // parhaps it is because leap years are not considered
-      // but it might be something else
-      return age;
+      return validator.isBeforeDate(birthDay, referenceDate);
     }
 
     // if all date fields are filled, then check if they represent a date before current day
@@ -141,10 +138,10 @@ window.addEventListener('load', function() {
       if ( checkYear(date.year) && checkMonth(date.month) && checkDay(date.day) ) {
         birthDate = yearVal + '-' + monthVal + '-' + dayVal;
         birthDate = new Date(birthDate);
-        if ( validator.isBeforeToday(birthDate) && getAge(birthDate) >= minAge ) {
-          console.log('Your age is: ', getAge(birthDate) );
+        if ( validator.isBeforeToday(birthDate) && validAge(birthDate, minAge)  ) {
+          console.log('Your age is ok!');
         } else {
-          date.month.setCustomValidity('You are not of the appropriate age to sign up here!');
+          date.month.setCustomValidity('You are not of the appropriate age to sign up here! You need to be at least 21.');
         }
       }
 
