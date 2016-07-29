@@ -54,6 +54,11 @@ form#schedule div {
   outline: none;
 }
 
+#schedule input:invalid {
+  border: 1px solid #d00;
+  box-shadow: none;
+}
+
 #schedule textarea:focus {
   outline: 1px solid #ccc;
 }

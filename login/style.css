@@ -63,6 +63,11 @@ fieldset {
   outline: none;
 }
 
+.credentials input:invalid {
+  border: 1px solid #d00;
+  box-shadow: none;
+}
+
 .credentials div {
   position: relative;
 }

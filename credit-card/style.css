@@ -137,3 +137,12 @@ form#credit-card-info:after {
   cursor: pointer;
   background-color: #3abcff;
 }
+
+#credit-card-info input:invalid {
+  border: 1px solid #c00;
+  box-shadow: none;
+}
+
+#credit-card-info select:invalid {
+  box-shadow: 0 0 0 1px #d00; /* setting the border messes up the select field appearance */
+}

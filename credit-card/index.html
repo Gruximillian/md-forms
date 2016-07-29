@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>Credit Card form</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../lib/validator.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -33,23 +35,24 @@
         <legend>Card expiration</legend>
 
         <label>Month</label>
-        <select>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
+        <select id="expiration-month">
+          <option value="0">January</option>
+          <option value="1">February</option>
+          <option value="2">March</option>
+          <option value="3">April</option>
+          <option value="4">May</option>
+          <option value="5">June</option>
+          <option value="6">July</option>
+          <option value="7">August</option>
+          <option value="8">September</option>
+          <option value="9">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
         </select>
 
         <label>Year</label>
-        <select>
+        <select id="expiration-year">
+          <option value="2015">2015</option>
           <option value="2016">2016</option>
           <option value="2017">2017</option>
           <option value="2018">2018</option>

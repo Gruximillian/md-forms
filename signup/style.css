@@ -173,3 +173,7 @@ label {
   opacity: 1;
   height: 20px;
 }
+
+input:invalid {
+  border: 1px solid #d00;
+}
