@@ -84,3 +84,8 @@ select {
   cursor: pointer;
   background-color: #3abcff;
 }
+
+input:invalid {
+  border: 1px solid #c00;
+  box-shadow: none;
+}
