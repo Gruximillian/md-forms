@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, inital-scale=1">
   <title>Color picker form</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -13,22 +14,22 @@
       <p>Use the sliders bellow to change the color.</p>
       <div class="colors">
         <label for="red" class="red">Red</label>
-        <input name="red" class="red" type="range" min="0" max="255" step="5" value="0">
+        <input name="red" class="red" data-color="red" type="range" min="0" max="255" step="5" value="0">
 
         <label for="green" class="green">Green</label>
-        <input name="green" class="green" type="range" min="0" max="255" step="5" value="0">
+        <input name="green" class="green" data-color="green" type="range" min="0" max="255" step="5" value="0">
 
         <label for="blue" class="blue">Blue</label>
-        <input name="blue" class="blue" type="range" min="0" max="255" step="5" value="0">
+        <input name="blue" class="blue" data-color="blue" type="range" min="0" max="255" step="5" value="0">
       </div>
-      <div class="alpha">
+      <div class="alpha-channel">
         <label for="alpha">Alpha</label>
-        <input name="alpha" type="range" min="0" max="1" step="0.01" value="1">
+        <input name="alpha" class="alpha" data-color="alpha" type="range" min="0" max="1" step="0.01" value="1">
       </div>
       <textarea class="display-color"></textarea>
       <div class="color-codes">
-        <p>RGBA color code: <span class="code-rgba"></span></p>
-        <p>HEX color code: <span class="code-hex"></span></p>
+        <p>RGBA color code: <span id="code-rgba"></span></p>
+        <p>HEX color code: <span id="code-hex"></span></p>
       </div>
     </form>
   </div>
