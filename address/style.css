@@ -8,8 +8,10 @@ body {
 
 .wrapper {
   position: relative;
-  width: 600px;
+  width: 90%;
+  max-width: 600px;
   margin: 20px auto;
+  text-align: center;
 }
 
 form {
@@ -20,6 +22,7 @@ form {
   font-family: arial, sans-serif;
   color: #6c6c6c;
   background-color: #fff;
+  display: inline-block;
 }
 
 form::after {
@@ -29,8 +32,42 @@ form::after {
 }
 
 fieldset {
-  width: 48%;
-  margin: 0 0 20px 0;
+  width: 96%;
+  margin: 20px auto;
+  max-width: 300px;
+  text-align: left;
+}
+
+.same-addresses {
+  max-width: 360px;
+}
+
+.same-addresses #billing-address {
+  display: none;
+}
+
+@media (min-width: 500px) {
+
+  fieldset {
+    width: 48%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  #shipping-address {
+    float: left;
+  }
+
+  #billing-address {
+    float: right;
+  }
+
+  .same-addresses #shipping-address {
+    width: auto;
+    margin: 20px auto;
+    float: none;
+  }
+
 }
 
 fieldset div {
@@ -55,16 +92,7 @@ select {
   height: 35px;
 }
 
-#shipping-address {
-  float: left;
-}
-
-#billing-address {
-  float: right;
-}
-
 .match-addresses {
-  clear: both;
   margin-bottom: 20px;
 }
 
@@ -78,6 +106,7 @@ select {
   border: none;
   border-radius: 2px;
   color: #fff;
+  clear: both;
 }
 
 #submit:hover {

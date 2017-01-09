@@ -53,19 +53,19 @@ window.addEventListener('load', function() {
         address = addressForm.querySelector('.address input'),
         city = addressForm.querySelector('.city input');
 
-    firstName.addEventListener('keyup', function() {
+    firstName.addEventListener('input', function() {
       checkName(this);
     });
 
-    lastName.addEventListener('keyup', function() {
+    lastName.addEventListener('input', function() {
       checkName(this);
     });
 
-    address.addEventListener('keyup', function() {
+    address.addEventListener('input', function() {
       checkAddressCity(this);
     });
 
-    city.addEventListener('keyup', function() {
+    city.addEventListener('input', function() {
       checkAddressCity(this);
     });
 
@@ -76,9 +76,9 @@ window.addEventListener('load', function() {
 
     // if addresses are not the same, then enable editing billing address separately
     if ( !checked ) {
-      form.querySelector('#billing-address').removeAttribute('disabled');
+      form.classList.remove('same-addresses');
     } else {
-      form.querySelector('#billing-address').setAttribute('disabled', 'disabled');
+      form.classList.add('same-addresses');
     }
   });
 
