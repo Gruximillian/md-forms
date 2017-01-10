@@ -7,14 +7,15 @@ body {
 }
 
 .wrapper {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
 }
 
 form {
+  width: 100%;
   border-radius: 5px;
-  min-width: 520px;
   color: #fff;
+  position: relative;
 }
 
 form::after {
@@ -24,11 +25,10 @@ form::after {
 }
 
 #category {
+  width: 50%;
   height: 35px;
-  width: 22%;
-  float: left;
   padding-left: 10px;
-  border-top-left-radius: inherit;
+  border-top-left-radius: 0;
   border-bottom-left-radius: inherit;
   border: 1px solid #000;
   background-color: #337ab7;
@@ -37,6 +37,8 @@ form::after {
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
+  position: absolute;
+  top: 35px;
 }
 
 #category:hover {
@@ -44,13 +46,10 @@ form::after {
 }
 
 #search-term {
+  width: 100%;
   padding-left: 15px;
   height: 35px;
-  border: none;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  width: 60%;
-  float: left;
+  border: 1px solid #000;
   background-color: rgba(0, 0, 0, 0.1);
   outline: none;
 }
@@ -67,15 +66,15 @@ form::after {
 }
 
 #submit {
+  width: 50%;
   height: 35px;
-  width: 18%;
-  float: left;
+  float: right;
   padding: 0 15px;
   font-size: 1.2em;
   letter-spacing: 2px;
   background-color: #5cb85c;
   color: inherit;
-  border-top-right-radius: inherit;
+  border-top-right-radius: 0;
   border-bottom-right-radius: inherit;
   border: 1px solid #000;
 }
@@ -88,4 +87,34 @@ form::after {
 #submit:active,
 #submit:focus {
   outline: none;
+}
+
+
+@media (min-width: 600px) {
+
+  .wrapper {
+    max-width: 800px;
+  }
+
+  #category {
+    width: 22%;
+    float: left;
+    position: static;
+    border-top-left-radius: inherit;
+  }
+
+  #search-term {
+    width: 60%;
+    float: left;
+    border: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  #submit {
+    width: 18%;
+    float: left;
+    border-top-right-radius: inherit;
+  }
+
 }

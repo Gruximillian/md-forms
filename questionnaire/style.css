@@ -12,14 +12,15 @@ h3 {
 
 .wrapper {
   position: relative;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   margin: 20px auto;
   border: 1px solid #000;
 }
 
 form {
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 15px;
   position: relative;
   background-color: #00abab;
 }
@@ -31,9 +32,23 @@ label {
 }
 
 form div {
-  float: left;
-  width: 40%;
-  margin: 10px 10px 20px 10px;
+  width: 80%;
+  margin: 10px auto 20px;
+}
+
+@media (min-width: 360px) {
+
+  form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  form div {
+    float: left;
+    width: 42%;
+    margin: 10px 10px 20px 10px;
+  }
+
 }
 
 form div:hover {
@@ -42,7 +57,7 @@ form div:hover {
 
 #custom-answer {
   height: 35px;
-  width: 50%;
+  width: 100%;
   padding-left: 10px;
   border-radius: 3px;
   border: 1px solid #ccc;

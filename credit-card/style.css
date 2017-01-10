@@ -8,7 +8,8 @@ body {
 
 .wrapper {
   position: relative;
-  width: 450px;
+  max-width: 450px;
+  widows: 100%;
   margin: 20px auto;
 }
 
@@ -71,7 +72,15 @@ form#credit-card-info:after {
   position: absolute;
   font-size: 1.5em;
   bottom: 5px;
-  right: 100px;
+  right: 20%;
+}
+
+@media (min-width: 400px) {
+
+  #what-is-csv {
+    right: 30%;
+  }
+
 }
 
 #what-is-csv:hover {
@@ -145,4 +154,13 @@ form#credit-card-info:after {
 
 #credit-card-info select:invalid {
   box-shadow: 0 0 0 1px #d00; /* setting the border messes up the select field appearance */
+}
+
+@media (min-width: 360px) {
+
+  .month,
+  .year {
+    display: inline-block;
+  }
+
 }

@@ -7,16 +7,19 @@ body {
   /*background-image: url(signup-background-[$2].jpg);*/
   /*background-image: url(signup-background-[$3].jpg);*/
   /*background-image: url(signup-background-[$4].jpg);*/
+  font-size: 16px;
 }
 
 .wrapper {
   position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
 }
 
 form {
-  width: 600px;
-  margin: 50px auto;
-  padding: 30px;
+  width: 100%;
+  padding: 30px 0;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 #000 inset;
@@ -25,14 +28,11 @@ form {
 }
 
 fieldset {
-  min-width: 470px;
-  max-width: 600px;
-  width: 80%;
+  width: 84%;
   margin: 15px auto;
   background-color: rgba(255, 255, 255, 0.3);
   border: none;
   border-radius: 5px;
-  padding-left: 50px;
   box-sizing: border-box;
   position: relative;
 }
@@ -43,14 +43,30 @@ legend {
   font-style: italic;
   padding: 2px 10px;
   position: relative;
-  left: -20px;
   text-align: left; /* chrome is centering this because of rule for ".date-of-birth" class */
+  font-size: 10px;
+}
+
+@media (min-width: 360px) {
+
+  fieldset {
+    padding-left: 20px;
+  }
+
+}
+
+@media (min-width: 600px) {
+
+  legend {
+    font-size: 14px;
+  }
+
 }
 
 input {
   display: inline-block;
   margin: 10px auto;
-  width: 60%;
+  width: 85%;
   height: 35px;
   padding-left: 10px;
   border-radius: 5px;
@@ -81,14 +97,26 @@ input::-webkit-input-placeholder {
 }
 
 label {
-  width: 25%;
-  display: inline-block;
+  display: block;
   font-family: arial, sans-serif;
+}
+
+@media (min-width: 600px) {
+
+  label {
+    display: inline-block;
+    width: 30%;
+  }
+
+  input {
+    width: 62%;
+  }
+
 }
 
 #submit {
   display: block;
-  width: 300px;
+  width: 70%;
   font-family: arial, sans-serif;
   margin: 15px auto 0;
   font-size: 1.5em;
@@ -108,18 +136,28 @@ label {
   cursor: pointer;
 }
 
-.date-of-birth {
-  text-align: center;
-}
-
 .date-of-birth label {
   width: 50px;
   text-align: center;
   padding-left: 0;
+  display: inline-block;
 }
 
 .date-of-birth input {
   width: 50px;
+  display: inline-block;
+}
+
+.date-row {
+  display: inline-block;
+}
+
+@media (min-width: 500px) {
+
+  .date-of-birth {
+    text-align: center;
+  }
+
 }
 
 #theme-control {
